@@ -14,9 +14,8 @@ class PostController extends Controller
     public  function index()
     {
         $posts = Post::all();
-        dd($posts);
+        return view('admin.pages.post.list',compact('posts'));
     }
-
 
     public function create()
     {

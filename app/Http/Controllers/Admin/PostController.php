@@ -38,4 +38,14 @@ class PostController extends Controller
 
         $post->save();
     }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
 }

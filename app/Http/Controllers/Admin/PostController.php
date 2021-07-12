@@ -39,9 +39,10 @@ class PostController extends Controller
         $post->save();
     }
 
-    public function edit()
+    public function edit($id)
     {
-
+        $post = Post::where('id',$id)->get();
+        return view('admin.pages.post.edit');
     }
 
     public function update()

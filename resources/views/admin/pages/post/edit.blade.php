@@ -8,7 +8,7 @@
             <form action="{{route('admin.post.store')}}" method="post" class="border rounded p-5">
                 @csrf
                 <div class="row mb-3">
-                    <h4>Add Post</h4>
+                    <h4>Edit Post</h4>
                 </div>
                 <div class="row mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <input type="submit" name="add_post" id="add_post" class="btn btn-success form-control" value="Add Post">
+                    <input type="submit" name="edit_post" id="edit_post" class="btn btn-success form-control" value="Update Post">
                 </div>
             </form>
         </div>

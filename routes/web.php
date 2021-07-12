@@ -26,6 +26,9 @@ Route::get('admin/dashboard', 'App\Http\Controllers\Admin\HomeController@dashboa
 
 Route::get('admin/post/list', 'App\Http\Controllers\Admin\PostController@index')->name('admin.post.list');
 
-
+//Add data
 Route::get('admin/post/add', 'App\Http\Controllers\Admin\PostController@create')->name('admin.post.add');
 Route::post('admin/post/store', 'App\Http\Controllers\Admin\PostController@store')->name('admin.post.store');
+
+//Edit data
+Route::get('admin/post/edit/{id}', 'App\Http\Controllers\Admin\PostController@edit')->name('admin.post.edit');

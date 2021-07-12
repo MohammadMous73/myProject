@@ -24,7 +24,7 @@
                             <td>{{jdate($post->created_at)->format('Y.m.d')}}</td>
                             <td>{{jdate($post->updated_at)->format('Y.m.d')}}</td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm rounded">Edit</a>
+                                <a href="{{route('admin.post.edit',$post->id)}}" class="btn btn-info btn-sm rounded">Edit</a>
                                 <a href="" class="btn btn-danger btn-sm rounded">Delete</a>
                             </td>
                         </tr>

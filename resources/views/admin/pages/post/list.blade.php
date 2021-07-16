@@ -4,7 +4,9 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-12 ">
-                <a class="text-decoration-none btn btn-success btn-sm fw-bold" href="{{route('admin.post.add')}}">Add Post</a>
+                <a class="text-decoration-none btn btn-success btn-sm fw-bold" href="{{route('admin.post.add')}}">
+                    ثبت مطلب
+                </a>
             </div>
             <div class="col-md-12 text-center mx-auto mt-4">
                 <table CLASS="rounded table table-hover table-bordered">
@@ -24,12 +26,13 @@
                             <td>{{jdate($post->created_at)->format('Y.m.d')}}</td>
                             <td>{{jdate($post->updated_at)->format('Y.m.d')}}</td>
                             <td>
-                                <a href="{{route('admin.post.edit',$post->id)}}" class="btn btn-info btn-sm rounded">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm rounded">Delete</a>
+                                <a href="{{route('admin.post.edit',$post->id)}}" class="btn btn-info btn-sm rounded">ویرایش</a>
+                                <a href="" class="btn btn-danger btn-sm rounded">حذف</a>
                             </td>
                         </tr>
                     @endforeach
                 </table>
+                {{$posts->links()}}
             </div>
         </div>
     </div>

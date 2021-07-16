@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public  function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         return view('admin.pages.post.list',compact('posts'));
     }
 
@@ -36,13 +36,21 @@ class PostController extends Controller
         $post->keyword = $request->keyword;
         $post->body    = $request->body;
 
-        $post->save();
+        try {
+            $post->save();
+        }
+        catch (\Exception $exception)
+        {
+            return redirect()->back()->with('warning',$exception->getMessage());
+        }
+        return redirect()->route('admin.post.list')->with('success','اطلاعات با موفقیت ثبت شد');
     }
 
     public function edit($id)
     {
-        $post = Post::where('id',$id)->get();
-        return view('admin.pages.post.edit');
+        //$post = Post::where('id',$id)->first();
+        $post = Post::firstWhere('id',$id);
+        return view('admin.pages.post.edit',compact('post'));
     }
 
     public function update()

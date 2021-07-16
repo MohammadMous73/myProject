@@ -4,7 +4,7 @@
 @section('content')
     <div class="row m-5">
         <div class="col-md-6 mx-auto">
-            @include('message-error.error')
+            @include('message-error.message')
             <form action="{{route('admin.post.store')}}" method="post" class="border rounded p-5">
                 @csrf
                 <div class="row mb-3">

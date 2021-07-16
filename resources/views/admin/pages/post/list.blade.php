@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row my-5">
+            @include('message-error.message')
             <div class="col-12 ">
                 <a class="text-decoration-none btn btn-success btn-sm fw-bold" href="{{route('admin.post.add')}}">
                     ثبت مطلب

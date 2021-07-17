@@ -22,13 +22,15 @@ Route::get('/contactus','App\Http\Controllers\ContactUsController@index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('admin/dashboard', 'App\Http\Controllers\Admin\HomeController@dashboard')->name('admin.dashboard');
 
-Route::get('admin/post/list', 'App\Http\Controllers\Admin\PostController@index')->name('admin.post.list');
+Route::any('admin/post/list', 'App\Http\Controllers\Admin\PostController@index')->name('admin.post.list');
 
 //Add data
 Route::get('admin/post/add', 'App\Http\Controllers\Admin\PostController@create')->name('admin.post.add');
 Route::post('admin/post/store', 'App\Http\Controllers\Admin\PostController@store')->name('admin.post.store');
 
 //Edit data
-Route::get('admin/post/edit/{id}', 'App\Http\Controllers\Admin\PostController@edit')->name('admin.post.edit');
+Route::get('admin/post/edit/{post}', 'App\Http\Controllers\Admin\PostController@edit')->name('admin.post.edit');
+Route::put('admin/post/update/{post}', 'App\Http\Controllers\Admin\PostController@update')->name('admin.post.update');

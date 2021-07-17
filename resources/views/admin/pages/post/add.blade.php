@@ -15,7 +15,7 @@
                         عنوان
                     </label>
                     <input type="text" name="title" id="title" autocomplete="off"
-                           value="{{old('title')}}" class="form-control @error('title') border-danger @enderror" placeholder="Title">
+                           value="{{old('title')}}" class="form-control @error('title') border-danger @enderror" placeholder="عنوان">
                 </div>
 
                 <div class="row mb-3">
@@ -23,7 +23,7 @@
                         کلمه کلیدی
                     </label>
                     <input type="text" name="keyword" id="keyword" autocomplete="off"
-                           value="{{old('keyword')}}" class="form-control @error('keyword') border-danger @enderror" placeholder="KeyWord">
+                           value="{{old('keyword')}}" class="form-control @error('keyword') border-danger @enderror" placeholder="کلمه کلیدی">
                 </div>
 
                 <div class="row mb-3">
@@ -31,7 +31,7 @@
                         متن
                     </label>
                     <textarea class="form-control @error('body') border-danger @enderror"
-                              name="body" id="body" placeholder="Body">{{old('body')}}</textarea>
+                              name="body" id="body" placeholder="متن">{{old('body')}}</textarea>
                 </div>
 
                 <div class="row mb-3">

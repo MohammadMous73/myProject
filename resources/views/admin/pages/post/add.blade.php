@@ -5,17 +5,27 @@
     <div class="row m-5">
         <div class="col-md-6 mx-auto">
             @include('message-error.message')
-            <form action="{{route('admin.post.store')}}" method="post" class="border rounded p-5">
+            <form action="{{route('admin.post.store')}}" enctype="multipart/form-data"
+                  method="post" class="border rounded p-5">
                 @csrf
                 <div class="row mb-3">
                     <h4>افزودن مطلب</h4>
                 </div>
+
                 <div class="row mb-3">
                     <label for="title" class="form-label">
                         عنوان
                     </label>
                     <input type="text" name="title" id="title" autocomplete="off"
                            value="{{old('title')}}" class="form-control @error('title') border-danger @enderror" placeholder="عنوان">
+                </div>
+
+                <div class="row mb-3">
+                    <label for="image" class="form-label">
+                        عکس
+                    </label>
+                    <input type="file" name="file" id="file"
+                           class="form-control @error('file') border-danger @enderror">
                 </div>
 
                 <div class="row mb-3">

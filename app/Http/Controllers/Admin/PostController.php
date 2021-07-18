@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -50,13 +51,27 @@ class PostController extends Controller
            'title'   => 'required|unique:posts',
            'keyword' => 'required',
            'body'    => 'required|min:30',
+           'file'    => 'required|mimes:png,jpg',
         ]);
+
+        $file_name = time().'.'.$request->file->extension();
+
+        $file_address = 'upload/'.$file_name;
+
+        Image::make($request->file)->resize(300,300)->save($file_address);
+
+//        if ($request->file->move(public_path('upload'),$file_name))
+//        {
+//            dd('okk');
+//        }
 
         $post = new Post();
 
         $post->title   = $request->title;
         $post->keyword = $request->keyword;
         $post->body    = $request->body;
+        $post->image   = $file_address;
+        $post->admin   = auth()->user()->name;
 
         try {
             $post->save();

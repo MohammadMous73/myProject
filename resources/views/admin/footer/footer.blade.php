@@ -1,7 +1,7 @@
 <footer class="page-footer font-small blue pt-4">
 
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left" style="position: absolute;bottom: 0; background-color: #999999">
+    <div class="container-fluid text-center text-md-left" style="background-color: #999999">{{--        position: absolute;bottom: 0;--}}
 
         <!-- Grid row -->
         <div class="row">

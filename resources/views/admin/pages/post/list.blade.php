@@ -54,6 +54,7 @@
                         <th>ردیف</th>
                         <th>عنوان</th>
                         <th> کلمات کلیدی </th>
+                        <th>تصویر</th>
                         <th>زمان انتشار</th>
                         <th>زمان بروز رسانی</th>
                         <th>تنظیمات</th>
@@ -63,6 +64,7 @@
                             <td>{{++$row}}</td>
                             <td>{{$post->title}}</td>
                             <td>{{$post->keyword}}</td>
+                            <td><img src="{{url($post->image)}}" class="img-fluid rounded" style="height: 50px"></td>
                             <td>{{jdate($post->created_at)->format('Y.m.d')}}</td>
                             <td>{{jdate($post->updated_at)->format('Y.m.d')}}</td>
                             <td>

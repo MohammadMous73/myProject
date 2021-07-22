@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="row m-5">
-        <div class="col-md-6 mx-auto">
+        <div class="col-12 mx-auto">
             @include('message-error.message')
             <form action="{{route('admin.post.store')}}" enctype="multipart/form-data"
                   method="post" class="border rounded p-5">
@@ -50,4 +50,26 @@
             </form>
         </div>
     </div>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript">
+        tiny();
+        function tiny() {
+            var editor_config = {
+                path_absolute : "/",
+                selector: "#body",
+                directionality:'rtl',
+                height:'350px',
+                plugins: [
+                    "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen",
+                    "insertdatetime media nonbreaking save table contextmenu directionality",
+                    "emoticons template paste textcolor colorpicker textpattern"
+                ],
+                toolbar: "insertfile undo redo | styleselect fontselect fontsizeselect forecolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+                fontsize_formats: "8px 9px 10px 11px 12px 14px 16px 18px 20px 22px 24px 36px",
+                relative_urls: false,
+            };
+            tinymce.init(editor_config);
+        }
+    </script>
 @endsection

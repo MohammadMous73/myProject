@@ -13,8 +13,8 @@ class AddAdminToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->text('admin')->after('image');
+        Schema::table('=posts', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,7 +25,7 @@ class AddAdminToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('=posts', function (Blueprint $table) {
             //
         });
     }

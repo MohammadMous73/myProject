@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function (){return view('welcome');});
 
-Route::get('/home','App\Http\Controllers\HomeController@index');
-Route::get('/about','App\Http\Controllers\AboutController@index');
-Route::get('/contactus','App\Http\Controllers\ContactUsController@index');
+//Route::get('/home','App\Http\Controller\App\HomeController@index')->name('app.home');
+//Route::get('/about','App\Http\Controllers\App\HomeController@index');
+//Route::get('/contactus','App\Http\Controllers\App\HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\App\HomeController::class, 'index'])->name('home');
 
 Route::get('admin/dashboard', 'App\Http\Controllers\Admin\HomeController@dashboard')->name('admin.dashboard');
 

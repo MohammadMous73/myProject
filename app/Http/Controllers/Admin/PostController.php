@@ -51,7 +51,7 @@ class PostController extends Controller
            'title'   => 'required|unique:posts',
            'keyword' => 'required',
            'body'    => 'required|min:30',
-           'file'    => 'required|mimes:png,jpg',
+           'file'    => 'required|mimes:png,jpg|max:50000',
         ]);
 
         $file_name = time().'.'.$request->file->extension();

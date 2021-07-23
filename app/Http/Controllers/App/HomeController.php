@@ -11,8 +11,8 @@ class HomeController extends Controller
 {
     public function index(){
 //        return 'It is Home Page ';
-        $name = 'Mohammad Mousavi';
-        return view('app.page.home',compact('name'));
+//        $name = 'Mohammad Mousavi';,compact('name')
+        return view('app.page.home');
     }
 
     public function show(){}

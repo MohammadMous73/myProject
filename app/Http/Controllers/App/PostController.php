@@ -17,9 +17,9 @@ class PostController extends Controller
 //        return view('app.page.home',compact('posts'));
 //    }
 
-    public function show(Post $post)
+    public function show($slug)
     {
-//        $post = Post::firstwhere('id',$id);
+        $post = Post::firstwhere('slug',$slug);
 
         return view('app.page.post.show',compact('post'));
     }

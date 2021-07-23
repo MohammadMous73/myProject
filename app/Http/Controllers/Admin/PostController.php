@@ -68,6 +68,7 @@ class PostController extends Controller
         $post = new Post();
 
         $post->title   = $request->title;
+        //$post->slug    = str_replace(' ','-',$request->title);
         $post->keyword = $request->keyword;
         $post->body    = $request->body;
         $post->image   = $file_address;

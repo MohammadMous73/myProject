@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\App\HomeController::class, 'index'])->name('app.home');
-Route::get('/post/{post}', 'App\Http\Controllers\App\PostController@show')->name('app.post.show');
+Route::get('/post/{slug}', 'App\Http\Controllers\App\PostController@show')->name('app.post.show');
 
 Route::get('admin/dashboard', 'App\Http\Controllers\Admin\HomeController@dashboard')->name('admin.dashboard');
 
